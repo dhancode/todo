@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My To-Do App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .add-btn {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .add-btn a {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .todo-item {
+            background: #f1f3f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .todo-subject {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .actions a {
+            text-decoration: none;
+            margin-left: 10px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            color: white;
+            font-size: 13px;
+        }
+
+        .view { background-color: #007bff; }
+        .edit { background-color: #ffc107; color: black; }
+        .delete { background-color: #dc3545; }
+
+        .actions a:hover {
+            opacity: 0.9;
+        }
+
+        .empty {
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>My To-Do List</h1>
+
+    <div class="add-btn">
+        <a href="{% url 'todo_create' %}">+ Add New To-Do</a>
+    </div>
+
+    {% if todos %}
+        {% for todo in todos %}
+            <div class="todo-item">
+                <div class="todo-subject">{{ todo.subject }}</div>
+                <div class="actions">
+                    <a href="{% url 'todo_detail' todo.id %}" class="view">View</a>
+                    <a href="{% url 'todo_update' todo.id %}" class="edit">Edit</a>
+                    <a href="{% url 'todo_delete' todo.id %}" class="delete">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="empty">No to-do items yet.</p>
+    {% endif %}
+</div>
+</body>
+</html>
