@@ -185,7 +185,7 @@ DATABASE_URL=postgres://user:password@host:port/dbname
 
 ## 👨‍💻 Author
 
-**Santhosh**
+**Dhanush Santhosh Kumar**
 GitHub: [https://github.com/dhancode](https://github.com/dhancode)
 
 ---
@@ -195,24 +195,3 @@ GitHub: [https://github.com/dhancode](https://github.com/dhancode)
 This project is intended for **educational and portfolio use**.
 
 ---
-
-### ✅ Portfolio Tip
-
-Include:
-
-* Screenshots
-* Deployed URL
-* Short demo GIF
-
-This makes your repository **recruiter-ready** 🚀
-
----
-
-If you want next:
-
-* Render / Railway deployment steps
-* PostgreSQL migration
-* Gunicorn + Whitenoise setup
-* Resume project summary
-
-Just tell me 👍
